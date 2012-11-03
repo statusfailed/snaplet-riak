@@ -3,6 +3,7 @@ version:             0.2.0.0
 synopsis:            A Snaplet for the Riak database
 description:         A Snaplet allowing easy use of the Riak database within
                      the Snap framework.
+homepage:            http://github.com/statusfailed/snaplet-riak
 license:             MIT
 license-file:        LICENSE
 author:              Paul Wilson
@@ -32,3 +33,7 @@ library
     time                      >= 1.4.0 && < 1.5
 
   Exposed-modules:            Snap.Snaplet.Riak
+
+source-repository head
+  type:     git
+  location: https://github.com/statusfailed/snaplet-riak.git
