@@ -109,12 +109,12 @@ modify_ b k r w dw f = withRiak $ \conn -> R.modify_ conn b k r w dw f
 delete :: (HasRiak m) => Bucket -> Key -> RW -> m ()
 delete b k rw = withRiak $ \conn -> R.delete conn b k rw
 
-put :: 
+put ::
   (HasRiak m, Eq a, FromJSON a, ToJSON a, Resolvable a)
   => Bucket -> Key -> Maybe VClock -> a -> W -> DW -> m (a, VClock)
 put b k vc c w dw = withRiak $ \conn -> R.put conn b k vc c w dw
 
-putMany :: 
+putMany ::
   (HasRiak m, Eq a, FromJSON a, ToJSON a, Resolvable a)
   => Bucket -> [(Key, Maybe VClock, a)] -> W -> DW -> m [(a, VClock)]
 putMany b ks w dw = withRiak $ \conn -> R.putMany conn b ks w dw
